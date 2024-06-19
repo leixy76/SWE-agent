@@ -1279,6 +1279,8 @@ See <a href="../../installation/keys/">here</a> for more information.</p>
 <ul>
 <li>All API keys (for LMs and GitHub) can be set as an environment variable. See <a href="../../installation/keys/">here</a> for more information.</li>
 <li><code>SWE_AGENT_CONFIG_ROOT</code>: Used to resolve relative paths in the <a href="../config/">config</a></li>
+<li><code>SWE_AGENT_ENV_LONG_TIMEOUT</code> (default: 500): Timeout in seconds used for commands that install instance environment.</li>
+<li><code>SWE_AGENT_LOG_TIME</code>: Add timestamps to log (<strong>can only be set as an environment variable</strong>)</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Unstable</p>
@@ -1286,7 +1288,7 @@ See <a href="../../installation/keys/">here</a> for more information.</p>
 </div>
 <ul>
 <li><code>SWE_AGENT_COMMUNICATE_METHOD</code>: Determines how SWE-agent communicates with the running process in the docker container: <code>end-marker</code> (default, fast) or <code>processes</code> (legacy, slow, more tested)</li>
-<li><code>SWE_AGENT_CLONE_METHOD</code>: <code>sparse</code> (default) or <code>full</code>. When using persistent containers or running over multiple problem statements, we fall back to <code>full</code>.</li>
+<li><code>SWE_AGENT_CLONE_METHOD</code>: <code>shallow</code> (default, only retrieves relevant commit) or <code>full</code> (clones repository including full history). When using persistent containers or running over multiple problem statements, we fall back to <code>full</code>.</li>
 <li><code>SWE_AGENT_DOCKER_START_UP_DELAY</code>: Number of seconds to wait after starting a docker container</li>
 </ul>
 

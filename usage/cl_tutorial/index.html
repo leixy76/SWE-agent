@@ -2277,6 +2277,12 @@ Let's start with an absolutely trivial example and solve an issue about a simple
 </ul>
 </div>
 <h2 id="specifying-the-repository">Specifying the repository</h2>
+<div class="admonition note">
+<p class="admonition-title">Operating in batch mode: Running on SWE-bench and other benchmark sets</p>
+<p>If you want to run SWE-agent in batch mode on SWE-bench or another whole evaluation set, see
+<a href="../benchmarking/">benchmarking</a>. This tutorial focuses on using SWE-agent on
+individual issues.</p>
+</div>
 <p>In the above example, the repository/codebase is inferred from the <code>--data_path</code>.
 This options is currently only available for GitHub issues.
 For all other use cases, you can specify <code>--repo_path</code>, which accepts either GitHub
@@ -2362,7 +2368,7 @@ We currently offer three ways to cache the setup stages:</p>
   you are installing) will be already available.</li>
 <li>Alternatively, you can specify <code>--cache_task_images</code>. For every repository/base commit/environment setup, we
   <a href="https://docs.docker.com/reference/cli/docker/container/commit/">commit</a> the changes from the installation stage to the Docker image. The corresponding containers are temporary as usual.
-  Unlike the persistent containers, there will be a new image <em>for almost every base commit</em> (that is, probabyl for every task
+  Unlike the persistent containers, there will be a new image <em>for almost every base commit</em> (that is, probably for every task
   when evaluating on a benchmark), which makes this only relevant when running over the same tasks more than once
   (for example when testing different agent configurations or LMs).</li>
 <li>You can also <a href="../../config/docker/">build your own Docker image</a> and ensure that all relevant conda environments and repositories
